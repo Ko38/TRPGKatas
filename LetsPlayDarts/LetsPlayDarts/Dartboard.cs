@@ -36,10 +36,11 @@ namespace LetsPlayDarts
         {
             var distance = CalculateDistanceByPythagoreanTheorem(x, y);
             var angle = Math.Atan2(y, x) * 180.0 / Math.PI;
-            return GetScoreText(distance).Replace("{point}", GetPoint(angle));
+            return GetScoreText(distance).Replace("{point}", CalculateBaseScore(angle));
         }
 
-        private string GetPoint(double angle)
+        //-9 to 9 : index 0 , // 9 to 27 : index 1 , ...
+        private string CalculateBaseScore(double angle)
         {
             angle += 9;
             if (angle < 0) angle += 360;
