@@ -12,6 +12,7 @@ namespace UnitTest1
 			{
 				Multiples * m = new Multiples();
 				Assert::AreEqual(23, m->solution(10));
+				delete m;
 			}
 	
 	};
